@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #222;
+  font-family: monospace;
+  text-align: center;
+}
+
+.game {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: skyblue;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 50px solid green;
+  touch-action: manipulation;
+}
+
+.mario {
+  width: 50px;
+  height: 65px;
+  position: absolute;
+  left: 50px;
+  bottom: 0;
+}
+
+.mario img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.obstacle {
+  width: 35px;
+  height: 48px; /* Shorter height so it is easy and fair to jump over */
+  background-color: brown;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 13, 13, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 10;
+  color: white;
+}
+
+.game-over h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.game-over button {
+  padding: 12px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Media Queries for Mobile */
+@media screen and (max-width: 768px) {
+  .game {
+    border-bottom: 40px solid green;
+  }
+
+  .mario {
+    width: 44px;
+    height: 56px;
+    left: 25px;
+  }
+
+  .obstacle {
+    width: 30px;
+    height: 40px;
+  }
+
+  .score {
+    top: 15px;
+    left: 15px;
+    font-size: 18px;
+  }
+
+  .game-over h1 {
+    font-size: 36px;
+  }
+
+  .game-over button {
+    padding: 10px 24px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .game {
+    border-bottom: 35px solid green;
+  }
+
+  .mario {
+    width: 38px;
+    height: 48px;
+    left: 15px;
+  }
+
+  .obstacle {
+    width: 26px;
+    height: 36px;
+  }
+
+  .score {
+    font-size: 16px;
+  }
+
+  .game-over h1 {
+    font-size: 28px;
+  }
+}
